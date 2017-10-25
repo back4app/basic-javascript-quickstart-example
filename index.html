@@ -28,6 +28,27 @@
     <script>
       Parse.initialize("YOUR_APP_ID", "YOUR_JS_KEY"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR Javascript KEY
       Parse.serverURL = "https://parseapi.back4app.com/";
+
+      // PASTE YOUR TEST CODE HERE
+
+      // var User = Parse.Object.extend("User");
+      var user = new Parse.User(); //TODO
+      var newuser = prompt('Type your username: ');
+      var newemail = prompt('Type your e-mail: ');
+
+      user.save({
+        username: newuser, // Column username already exist inside class User
+        email: newemail, // Column email already exist inside class User
+        password: "123456" // Column password already exist inside class User.
+        // Since a password is required, we just send a random password to test our code.
+      }, {
+        success: function(response) {
+          alert('New object create with success! ObjectId: ' + response.id + `, ` + user.get('username'));
+        },
+        error: function(response, error) {
+          alert('Erro: ' + error.message);
+        }
+      });
     </script>
 
   </div>
