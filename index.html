@@ -4,8 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Basic CRUD App</title>
+  <meta content="Back4App Inc" name="author">
 
+  <title>Sample App| JavaScript Quickstart | Back4App</title>
+
+  <!-- Remember to update the version number in the script link above. -->
+  <script src="https://unpkg.com/parse@1.10.0/dist/parse.min.js"></script>
+
+  <style>
+  </style>
 </head>
 
 <body>
@@ -16,6 +23,12 @@
 
     <h3>Hello World!</h3>
     <!-- Add your content here -->
+
+
+    <script>
+      Parse.initialize("YOUR_APP_ID", "YOUR_JS_KEY"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR Javascript KEY
+      Parse.serverURL = "https://parseapi.back4app.com/";
+    </script>
 
   </div>
 
