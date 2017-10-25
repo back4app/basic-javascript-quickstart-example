@@ -34,10 +34,10 @@
       var newemail = prompt('Type your e-mail:');
 
       user.save({
-        username: newuser, // Column username already exist inside class User
-        email: newemail, // Column email already exist inside class User
-        password: "123456" // Column password already exist inside class User.
-        // Since a password is required, we just send a random password to test our code.
+        // Column username, email and password already exists inside class User
+        username: newuser,
+        email: newemail,
+        password: "123456" // Since a password is required, we just send a random password to test our code.
       }, {
         success: function(response) {
           alert('New object create with success! ObjectId: ' + response.id + `, ` + user.get('username'));
