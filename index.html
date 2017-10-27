@@ -8,8 +8,8 @@
 
   <title>Sample App| JavaScript Quickstart | Back4App</title>
 
-  <!-- Remember to update the version number in the script link above. -->
-  <script src="https://unpkg.com/parse@1.10.0/dist/parse.min.js"></script>
+  <!-- Import here your JavaScript SDK -->
+  <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
 
 </head>
 
@@ -30,14 +30,10 @@
       // PASTE YOUR TEST CODE HERE
 
       var user = new Parse.User();
-      var newuser = prompt('Type your username:');
-      var newemail = prompt('Type your e-mail:');
-
       user.save({
-        // Column username, email and password already exists inside class User
-        username: newuser,
-        email: newemail,
-        password: "123456" // Since a password is required, we just send a random password to test our code.
+        username: 'sampeusername',
+        email: 'sample@email.com',
+        password: '123456'
       }, {
         success: function(response) {
           alert('New object create with success! ObjectId: ' + response.id + `, ` + user.get('username'));
