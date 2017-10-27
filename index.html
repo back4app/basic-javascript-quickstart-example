@@ -4,7 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Basic CRUD App</title>
+  <meta content="Back4App Inc" name="author">
+
+  <title>Sample App| JavaScript Quickstart | Back4App</title>
+
+  <!-- Import here your JavaScript SDK -->
+  <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
 
 </head>
 
@@ -14,9 +19,35 @@
       <!-- Add your header image here -->
     </header>
 
+    <h3>Hello World!</h3>
+    <!-- Add your content here -->
+
+
+    <script>
+      Parse.initialize("YOUR_APP_ID", "YOUR_JS_KEY"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR Javascript KEY
+      Parse.serverURL = "https://parseapi.back4app.com/";
+
+      // PASTE YOUR TEST CODE HERE
+
+      var user = new Parse.User();
+      user.save({
+        username: 'sampeusername',
+        email: 'sample@email.com',
+        password: '123456'
+      }, {
+        success: function(response) {
+          alert('New object create with success! ObjectId: ' + response.id + `, ` + user.get('username'));
+        },
+        error: function(response, error) {
+          alert('Erro: ' + error.message);
+        }
+      });
+    </script>
 
   </div>
+
   <br><br><br>
+
   <footer>
     <!-- Add your footer message/logo here -->
   </footer>
